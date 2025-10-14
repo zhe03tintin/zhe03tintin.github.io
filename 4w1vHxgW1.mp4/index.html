@@ -33,29 +33,54 @@
         }
     </style>
 </head>
-<body>
+<body>    
+    <div class="separator" style="clear: both; text-align: center;"><iframe width="100%" height="100%"
+    src="https://cdn.videy.co/6ThLQhg11.mp4" type="video/mp4">
+      Browser Anda tidak mendukung pemutar video.
+    </video>
+
+    <div class="ad-banner" id="adBanner">
 <script type="text/javascript">
 	atOptions = {
-		'key' : '97769e31ab76979e0ee340bc5c857351',
+		'key' : '4a2fc598ebbbdbc95eb3bef73798c939',
 		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
+		'height' : 50,
+		'width' : 320,
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/97769e31ab76979e0ee340bc5c857351/invoke.js"></script>    
-    <div class="separator" style="clear: both; text-align: center;"><iframe width="100%" height="100%"
-    src="https://cdn.videy.co/6ThLQhg11.mp4"
-    frameborder="0" style="position:absolute; top:5; left: 0">
-  </iframe></object></div>
+<script type="text/javascript" src="//www.highperformanceformat.com/4a2fc598ebbbdbc95eb3bef73798c939/invoke.js"></script>
+    </div>
+  </div>
 
-<!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
-<!-- Histats.com  START  (aync)-->
+  <script>
+    const video = document.getElementById('myVideo');
+    const adBanner = document.getElementById('adBanner');
+
+    // Tampilkan iklan 5 detik setelah video mulai diputar
+    video.addEventListener('play', () => {
+      setTimeout(() => {
+        adBanner.style.display = 'flex';
+      }, 1000);
+    });
+
+    // Tutup iklan secara manual
+    function closeAd() {
+      adBanner.style.display = 'none';
+    }
+
+    // Opsional: sembunyikan iklan otomatis setelah 10 detik
+    video.addEventListener('play', () => {
+      setTimeout(() => {
+        adBanner.style.display = 'none';
+      }, 1500000000);
+    });
+  </script>
+   <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,4573229,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
-_Hasync.push(['Histats.framed_page', '']);
 (function() {
 var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
 hs.src = ('//s10.histats.com/js15_as.js');
@@ -63,3 +88,5 @@ hs.src = ('//s10.histats.com/js15_as.js');
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4573229&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
+</body>
+</html>
