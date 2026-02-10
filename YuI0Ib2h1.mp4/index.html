@@ -1,49 +1,179 @@
-<html lang="id">
+
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>She knows how to behave</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        .video-container {
-            max-width: 720px;
-            margin: auto;
-            background: #fff;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        video {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .ad-banner {
-            margin-top: 10px;
-        }
-        .ad-banner img {
-            width: 100%;
-            max-height: 90px;
-            border-radius: 8px;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title> Lol what's the secret to her speed? 🤣🔥 </title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    text-align: center;
+    padding: 16px;
+}
+
+/* Title */
+.video-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* Video Container (portrait lock) */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 420px;       /* desktop: tidak kegedean */
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;  /* KUNCI portrait */
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* Video */
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #000;
+    border-radius: 14px;
+
+    /* Disable user interaction fullscreen */
+    pointer-events: auto;
+}
+
+/* HILANGKAN FULLSCREEN BUTTON */
+video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+video::-webkit-media-controls-picture-in-picture-button {
+    display: none !important;
+}
+video::-webkit-media-controls-enclosure {
+    overflow: hidden;
+}
+
+/* Ad overlay */
+.ad-overlay {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 50px;
+    z-index: 10;
+}
+.ad-top {
+    top: 10px;
+}
+
+/* Mobile optimization */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .video-wrapper {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+}
+</style>
 </head>
+
 <body>
-    <script type="text/javascript">
-	atOptions = {
-		'key' : '97769e31ab76979e0ee340bc5c857351',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
+
+<div class="video-title">
+    Lol what's the secret to her speed? 🤣🔥
+</div>
+
+<div class="video-wrapper">
+
+    <!-- TOP ADS -->
+    <div class="ad-overlay ad-top">
+<script>
+   atOptions = {
+    'key' : '77d0d7666d4c0f56b47a00a0de655ce9',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/97769e31ab76979e0ee340bc5c857351/invoke.js"></script>
-    <div class="separator" style="clear: both; text-align: center;"><iframe width="100%" height="100%"
-    src="https://cdn.videy.co/MN0pAXzE1.mp4"
-    frameborder="0" style="position:absolute; top:5; left: 0">
-  </iframe></object></div>
+<script src="https://nailsheedlesswarn.com/77d0d7666d4c0f56b47a00a0de655ce9/invoke.js"></script>
+    </div>
+
+    <!-- VIDEO -->
+    <video
+        autoplay
+        loop
+        muted
+        playsinline
+        controls
+        controlsList="nodownload noremoteplayback nofullscreen"
+        disablePictureInPicture
+        poster="https://cdn.videy.co/lBVVczwi1.mp4"
+    >
+        <source src="https://cdn.videy.co/lBVVczwi1.mp4" type="video/mp4">
+    </video>
+
+</div>
+  <header>
+<!-- JuicyAds PopUnders v3 Start -->
+<script type="text/javascript" src="https://js.juicyads.com/jp.php?c=4464y2x2t244u4r2p26463d424&u=https%3A%2F%2Fwww.juicyads.rocks"></script>
+<!-- JuicyAds PopUnders v3 End -->
+  </header>
+
+  <footer>
+    © 2025 Blacked Streaming. All rights reserved.
+  </footer>
+
+  <script>
+    // Cegah masuk fullscreen lewat JavaScript
+    document.addEventListener('fullscreenchange', () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      }
+    });
+
+    // Proteksi klik kanan dan F12
+    (function () {
+      document.addEventListener('contextmenu', function (e) {
+        if (!e.target.closest('.allow-context, iframe')) {
+          e.preventDefault();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === "F12") e.preventDefault();
+        if (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) e.preventDefault();
+        if (e.ctrlKey && ["U","S"].includes(e.key.toUpperCase())) e.preventDefault();
+      });
+    })();
+  </script>
+
+
+   <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5007039,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5007039&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+</body>
+</html>
