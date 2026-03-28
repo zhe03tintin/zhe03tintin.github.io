@@ -1,48 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Video Player</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: Arial, Helvetica, sans-serif; background: #f5f5f5; text-align: center; padding: 16px; }
-        .video-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; }
-        .video-wrapper { position: relative; width: 100%; max-width: 420px; margin: 0 auto; aspect-ratio: 9 / 16; background: #000; border-radius: 14px; overflow: hidden; }
-        video { width: 100%; height: 100%; object-fit: cover; display: block; background: #000; border-radius: 14px; }
-        
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            .video-wrapper { max-width: 100%; border-radius: 10px; }
-        }
-    </style>
+  <meta name="referrer" content="no-referrer-when-downgrade" />	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videy.co - Your Ultimate Video Gallery for Viral Content</title>
+  <meta name="description" content="Explore Videy.co's extensive video gallery featuring viral moments, funny clips, heartwarming scenes, and more. Your go-to source for captivating video content." />
+  <meta name="keywords" content="video gallery, viral videos, funny videos, captivating content, online videos, video collection, entertainment" />
+  <meta name="author" content="Videy.co Team" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rudr780.github.io/" />
+
+  <style>
+    :root {
+      
+      --bg-color: #000000;
+      --card-bg-color: #ffffff;
+      --text-color: #E50914;
+      --link-color: #E50914;
+      --link-hover-color: #E50914;
+      --shadow-light: rgba(0, 0, 0, 0.08);
+      --shadow-heavy: rgba(0, 0, 0, 0.15);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-color);
+      text-align: center;
+      padding: 0.5rem 1rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: clamp(0.9rem, 4.5vw, 2.5rem); 
+      color: var(--link-color);
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px var(--shadow-light);
+      white-space: nowrap; 
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    figure {
+      background-color: var(--card-bg-color);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px var(--shadow-light);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    figure:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px var(--shadow-heavy);
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+
+    figcaption {
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+      font-size: clamp(0.7rem, 2vw, 1rem);
+      font-weight: 600;
+      color: var(--text-color);
+      flex-grow: 1;
+      white-space: nowrap;
+    }
+
+    .video-link {
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      width: 100%; 
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--link-color);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: clamp(0.9rem, 3vw, 1rem);
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap; 
+    }
+
+    .video-link:hover {
+      background-color: var(--link-hover-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--shadow-heavy);
+    }
+	.next-page-button {
+      margin-top: 30px; 
+      margin-bottom: 50px; 
+    }
+    
+    @media (min-width: 768px) {
+      .gallery-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .video-link {
+        width: auto;
+      }
+    }
+    
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Your Ultimate Video Gallery for Viral Content</h1>
+  </header>
+	
+ <script async="async" data-cfasync="false" src="https://hypothesisgarden.com/a227b60d1b3b2189655acfefd864f0ab/invoke.js"></script>
+<div id="container-a227b60d1b3b2189655acfefd864f0ab"></div>
+	
+  <main>
+    <div class="gallery-container">
+      <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="a.jpg" alt="One of my favorite clips" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">One of my favorite clips</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/HYiZdvaF1.mp4/" />
+        <a href="https://yusninita007.github.io/dc9yz3yg1.mp4/" class="video-link" aria-label="Watch video: One of my favorite clips">Watch Video</a>
+      </figure>
+      
+      <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="b.jpg" alt="we talk each other through it" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">we talk each other through it</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/3YjIBydp1.mp4/" />
+        <a href="https://yusninita007.github.io/DaiGty1k1.mp4/" class="video-link" aria-label="Watch video: we talk each other through it">Watch Video</a>
+      </figure>
 
-    <div class="video-title">Real Movie For Yall 🥰</div>
+      <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="c.jpg" alt="R.i.p to her" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">R.i.p to her</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/W2KhV7aL1.mp4/" />
+        <a href="https://yusninita007.github.io/d9UHhgJO1.mp4/" class="video-link" aria-label="Watch video: R.i.p to her">Watch Video</a>
+      </figure>
 
-    <div class="video-wrapper">
-        <video autoplay loop muted playsinline controls 
-               controlsList="nodownload noremoteplayback nofullscreen" 
-               disablePictureInPicture 
-               poster="https://cdn.videy.co">
-            <source src="https://cdn.videy.co" type="video/mp4">
-        </video>
-    </div>
+      <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="d.jpg" alt="This after we unblock each other" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">This after we unblock each other</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/7p0oPPGb1.mp4/" />
+        <a href="https://yusninita007.github.io/Cyq76t8W1.mp4/" class="video-link" aria-label="Watch video: This after we unblock each other">Watch Video</a>
+      </figure>
 
-    <footer style="margin-top: 20px;">
-        © 2025 Streaming Player
-    </footer>
+      <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="e.jpg" alt="you can use both holes" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">you can use both holes</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/0df3eg0v1.mp4/" />
+        <a href="https://yusninita007.github.io/cwzrigws1.mp4/" class="video-link" aria-label="Watch video: you can use both holes">Watch Video</a>
+      </figure>
 
-    <script>
-        // Mencegah klik kanan dan inspeksi dasar
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('keydown', e => {
-            if (e.key === "F12" || (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase()))) {
-                e.preventDefault();
-            }
-        });
-    </script>
+      <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="f.jpg" alt="When he made me bend over" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">When he made me bend over</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/XsmhAsCs1.mp4/" />
+        <a href="https://yusninita007.github.io/CVVCWjA41.mp4/" class="video-link" aria-label="Watch video: When he made me bend over">Watch Video</a>
+      </figure>
 
+      <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="g.jpg" alt="what's going on" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">what's going on</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/cjoRtFHM1.mp4/" />
+        <a href="https://yusninita007.github.io/CNJFVhsO1.mp4/" class="video-link" aria-label="Watch video: what's going on">Watch Video</a>
+      </figure>
+
+      <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="h.jpg" alt="Thank him for giving you a ride home" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Thank him for giving you a ride home</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/Z9sQ2JGJ1.mp4/" />
+        <a href="https://yusninita007.github.io/cjoRtFHM1.mp4/" class="video-link" aria-label="Watch video: Thank him for giving you a ride home">Watch Video</a>
+      </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="i.jpg" alt="start from the bottom" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">start from the bottom</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/GnluRbG81.mp4/" />
+        <a href="https://yusninita007.github.io/cGYSaM8z1.mp4/" class="video-link" aria-label="Watch video: start from the bottom">Watch Video</a>
+    </figure>
+
+     <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="j.jpg" alt="I wanna try it" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">I wanna try it</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/loV7r3mG1.mp4/" />
+        <a href="https://yusninita007.github.io/cEHQ2hW51.mp4/" class="video-link" aria-label="Watch video: I wanna try it">Watch Video</a>
+    </figure>
+
+     <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="k.jpg" alt="Shawty bricked up" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Shawty bricked up</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/oUa0ySsX1.mp4/" />
+        <a href="https://yusninita007.github.io/c4M80IXe1.mp4/" class="video-link" aria-label="Watch video: Shawty bricked up">Watch Video</a>
+    </figure>
+
+   <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="l.jpg" alt="like a barbie doll" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">like a barbie doll</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/I3EJTZ2y1.mp4/" />
+        <a href="https://yusninita007.github.io/C1l4ceaw1.mp4/" class="video-link" aria-label="Watch video: like a barbie doll">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="m.jpg" alt="Wake me up like this" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Wake me up like this</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/yKrAzZFa1.mp4/" />
+        <a href="https://yusninita007.github.io/C0UQQqNm1.mp4/" class="video-link" aria-label="Watch video: Wake me up like this">Watch Video</a>
+    </figure> 
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="n.jpg" alt="Definitely not mine" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Definitely not mine</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/XmyC0atK1.mp4/" />
+        <a href="https://yusninita007.github.io/BQWlz9f81.mp4/" class="video-link" aria-label="Watch video: Definitely not mine">Watch Video</a>
+    </figure> 
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="o.jpg" alt="The beauty of the sea" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">The beauty of the sea</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/Ya3ugPbd1.mp4/" />
+        <a href="https://yusninita007.github.io/BKsP4CAN1.mp4/" class="video-link" aria-label="Watch video: The beauty of the sea">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="p.jpg" alt="Am i asking for too much" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Am i asking for too much</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/FAqkPpBV1.mp4/" />
+        <a href="https://yusninita007.github.io/bi2zmkfG1.mp4/" class="video-link" aria-label="Watch video: Am i asking for too much">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="q.jpg" alt="Twinnn Don’t Miss" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Twinnn Don’t Miss</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/gQVY8uL31.mp4/" />
+        <a href="https://yusninita007.github.io/Bf9uHXSF1.mp4/" class="video-link" aria-label="Watch video: Twinnn Don’t Miss">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="r.jpg" alt="Nigga living my dream" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Nigga living my dream</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/kbCELrnY1.mp4/" />
+        <a href="https://yusninita007.github.io/b7tSZVY41.mp4/" class="video-link" aria-label="Watch video: Nigga living my dream">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="s.jpg" alt="This is the first time" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">This is the first time</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/sLx7vw9k1.mp4/" />
+        <a href="https://yusninita007.github.io/b1qjZKsr1.mp4/" class="video-link" aria-label="Watch video: This is the first time">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="t.jpg" alt="enough to make you weak" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">enough to make you weak</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/3ECPd7yb1.mp4/" />
+        <a href="https://yusninita007.github.io/AZzXgTZ11.mp4/" class="video-link" aria-label="Watch video: enough to make you weak">Watch Video</a>
+    </figure>  
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="1.jpg" alt="stop playing the nutted" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">stop playing the nutted</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/N52S2nGk1.mp4/" />
+        <a href="https://yusninita007.github.io/avBOJGr4.mp4/" class="video-link" aria-label="Watch video: stop playing the nutted">Watch Video</a>
+    </figure>  
+
+   <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="2.jpg" alt="tried new sizes and different colors" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">tried new sizes and different colors</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/UhtpWQIC1.mp4/" />
+        <a href="https://yusninita007.github.io/atopzUYu1.mp4/" class="video-link" aria-label="Watch video: tried new sizes and different colors">Watch Video</a>
+    </figure> 
+
+   <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="3.jpg" alt="Wow those are some fly moves" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Wow those are some fly moves</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/8BY3VgmK1.mp4/" />
+        <a href="https://yusninita007.github.io/aSLXXF9G1.mp4/" class="video-link" aria-label="Watch video: Wow those are some fly moves">Watch Video</a>
+    </figure> 
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="4.jpg" alt="from the car to bedd" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">from the car to bedd</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/kMHjBtB71.mp4/" />
+        <a href="https://yusninita007.github.io/aqwljM9i1.mp4/" class="video-link" aria-label="Watch video: from the car to bedd">Watch Video</a>
+    </figure>
+
+     <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="5.jpg" alt="Nutted before it even got in" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Nutted before it even got in</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/vPuPurAw1.mp4/" />
+        <a href="https://yusninita007.github.io/ANob3Xwv1.mp4/" class="video-link" aria-label="Watch video: Nutted before it even got in">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="6.jpg" alt="only one on the menu" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">only one on the menu</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/lKUx7EUY1.mp4/" />
+        <a href="https://yusninita007.github.io/aKQ508oq1.mp4/" class="video-link" aria-label="Watch video: only one on the menu">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="7.jpg" alt="once again they don’t disappoint" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">once again they don’t disappoint</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/nFRQXEhj1.mp4/" />
+        <a href="https://yusninita007.github.io/AiYHm2nK1.mp4/" class="video-link" aria-label="Watch video: once again they don’t disappoint">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="8.jpg" alt="mountains views" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">mountains views</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/avBOJGr4.mp4/" />
+        <a href="https://yusninita007.github.io/AfcGC2kU1.mp4/" class="video-link" aria-label="Watch video: mountains views">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="10.jpg" alt="Best washing machines" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Best washing machines</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/OoYkPzLC1.mp4/" />
+        <a href="https://yusninita007.github.io/ad8umy441.mp4/" class="video-link" aria-label="Watch video: Best washing machines">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="11.jpg" alt="The long-awaited arrival" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">The long-awaited arrival</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/cYXL8Daa1.mp4/" />
+        <a href="https://yusninita007.github.io/9wMY6Eox1.mp4/" class="video-link" aria-label="Watch video: The long-awaited arrival">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="12.jpg" alt="Dora the Explorer" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Dora the Explorer</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/RdGnqNUE1.mp4/" />
+        <a href="https://yusninita007.github.io/9NR9jZYG1.mp4/" class="video-link" aria-label="Watch video: Dora the Explorer">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="13.jpg" alt="Something annoying makes curious" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Something annoying makes curious</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/Iwm1zkH71.mp4/" />
+        <a href="https://yusninita007.github.io/9F2NLRoe1.mp4/" class="video-link" aria-label="Watch video: Something annoying makes curious">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="14.jpg" alt="eat good food" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">eat good food</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/atVQs9so1.mp4/" />
+        <a href="https://yusninita007.github.io/9DqQ1E2n1.mp4/" class="video-link" aria-label="Watch video: eat good food">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="15.jpg" alt="lollipop could handle" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">lollipop could handle</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/IohKIYK51.mp4/" />
+        <a href="https://yusninita007.github.io/8Qfysmzh1.mp4/" class="video-link" aria-label="Watch video: lollipop could handle">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="16.jpg" alt="I'm sure you're curious too" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">I'm sure you're curious too</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/qjvM2bQF1.mp4/" />
+        <a href="https://yusninita007.github.io/8nvy62J51.mp4/" class="video-link" aria-label="Watch video: I'm sure you're curious too">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="17.jpg" alt="He was looking for what he had needed" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">He was looking for what he had needed</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/R4qbw8CU1.mp4/" />
+        <a href="https://yusninita007.github.io/8MoNNqKk1.mp4/" class="video-link" aria-label="Watch video: He was looking for what he had needed">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="18.jpg" alt="Pretty talented actress" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Pretty talented actress</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/lUlgzcI91.mp4/" />
+        <a href="https://yusninita007.github.io/8EAcMFY61.mp4/" class="video-link" aria-label="Watch video: Pretty talented actress">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="19.jpg" alt="live for gatherings" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">live for gatherings</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/9d6brqxQ1.mp4/" />
+        <a href="https://yusninita007.github.io/8BY3VgmK1.mp4/" class="video-link" aria-label="Watch video: live for gatherings">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="20.jpg" alt="Cheers my friends love" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">Cheers my friends love</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/hC2h0EWG1.mp4/" />
+        <a href="https://yusninita007.github.io/7fpzPx1E1.mp4/" class="video-link" aria-label="Watch video: Cheers my friends love">Watch Video</a>
+    </figure>
+
+    <figure itemscope itemtype="http://schema.org/VideoObject">
+        <img src="21.jpg" alt="I'm in your dreams" itemprop="thumbnailUrl" loading="lazy" width="280" height="180" />
+        <figcaption itemprop="name">I'm in your dreams</figcaption>
+        <meta itemprop="description" content="A heartwarming clip of a baby's joyful smile, perfect for sharing." />
+        <meta itemprop="uploadDate" content="2025-08-27" /> <link itemprop="contentUrl" href="https://ashvili99-byte.github.io/XNWSxUBm1.mp4/" />
+        <a href="https://yusninita007.github.io/7CSl6O1Y1.mp4/" class="video-link" aria-label="Watch video: I'm in your dreams">Watch Video</a>
+    </figure>
+      
+    </div>	  
+  </main>
+
+	
+  <a href="https://hypothesisgarden.com/b2juj2z1?key=e00eee5a0e215c72b8528d3f6b624043" class="video-link next-page-button">NEXT</a>
+ 
+ <footer>
+    <p>&copy; 2025 Videy.co. All rights reserved.</p>
+  </footer>
+
+  <script>
+    
+    const secretMessage = document.getElementById('secretMessage');
+    if (secretMessage) { // Check if the element exists to prevent errors
+      secretMessage.classList.add('hidden-css');
+    }
+
+    
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      console.log('Right-click prevented.'); // Optional: for debugging
+    });
+
+    
+    document.addEventListener('keydown', function(e) {
+      const forbiddenKeys = ['F12'];
+      const forbiddenCtrlShiftKeys = ['I', 'J', 'C']; // I for Inspect, J for Console, C for Elements
+      const forbiddenCtrlKeys = ['U', 'S']; // U for View Source, S for Save
+
+      
+      if (forbiddenKeys.includes(e.key)) {
+        e.preventDefault();
+        console.log(`${e.key} key prevented.`);
+      }
+
+      
+      if (e.ctrlKey && e.shiftKey && forbiddenCtrlShiftKeys.includes(e.key.toUpperCase())) {
+        e.preventDefault();
+        console.log(`Ctrl+Shift+${e.key.toUpperCase()} prevented.`);
+      }
+
+      
+      if (e.ctrlKey && forbiddenCtrlKeys.includes(e.key.toUpperCase())) {
+        e.preventDefault();
+        console.log(`Ctrl+${e.key.toUpperCase()} prevented.`);
+      }
+    });
+
+    
+    (function() {
+      var devtools = /devtool/i;
+      var checkStatus = function() {
+        if (devtools.test(function() {}.toString())) {
+          // This part only executes if dev tools are open in some browsers
+          console.warn("Hey! Looks like you're peeking. ??");
+          console.warn("Our content is meant to be enjoyed directly!");
+          // You could also redirect, or overlay content, but that can be annoying for users.
+        }
+      };
+      
+    })();
+
+  </script>
 </body>
 </html>
+
+
+   <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5007039,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5007039&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
