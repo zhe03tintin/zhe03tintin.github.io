@@ -25,8 +25,8 @@
         <video autoplay loop muted playsinline controls 
                controlsList="nodownload noremoteplayback nofullscreen" 
                disablePictureInPicture 
-               poster="https://cdn2.videy.co/GtH91N6S1.mp4">
-            <source src="https://cdn2.videy.co/GtH91N6S1.mp4" type="video/mp4">
+               poster="https://cdn.videy.co">
+            <source src="https://cdn.videy.co" type="video/mp4">
         </video>
     </div>
 
