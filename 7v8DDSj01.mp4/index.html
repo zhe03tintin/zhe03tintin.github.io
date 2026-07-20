@@ -1,65 +1,279 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>at such a young age, many things are always being attempted</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        .video-container {
-            max-width: 720px;
-            margin: auto;
-            background: #fff;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        video {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .ad-banner {
-            margin-top: 10px;
-        }
-        .ad-banner img {
-            width: 100%;
-            max-height: 90px;
-            border-radius: 8px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videy – Pemutar Video Sederhana</title>
+  <link rel="icon" type="image/x-icon" href="https://videy.co/favicon.ico" />
+  <link href="https://googleapis.com" rel="stylesheet">
+  
+  <style>
+    /* RESET & BASE */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .main-header {
+      width: 100%;
+      border-bottom: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #111111;
+      text-decoration: none;
+    }
+    .header-upload {
+      padding: 8px 20px;
+      background: #000000;
+      color: white;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .header-upload:hover { background: #222222; }
+
+    /* MAIN CONTENT */
+    .page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px;
+    }
+    .video-player-wrap {
+      width: 100%;
+      padding: 24px 0;
+      display: flex;
+      justify-content: center;
+    }
+    .video-box {
+      position: relative;
+      width: 860px;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000000;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000000;
+    }
+    .video-error-msg {
+      color: #9ca3af;
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+      position: absolute;
+    }
+
+    /* ACTIONS */
+    .video-actions {
+      margin-bottom: 32px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .share-btn {
+      background: #f3f4f6;
+      color: #111827;
+    }
+    .share-btn:hover { background: #e5e7eb; }
+    .download-btn {
+      background: #10b981;
+      color: white;
+      display: none; /* Muncul otomatis jika video valid */
+    }
+    .download-btn:hover { background: #059669; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 32px 16px;
+      color: #6b7280;
+      font-size: 13px;
+      border-top: 1px solid #e5e7eb;
+      margin-top: auto;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 12px;
+    }
+    .footer-link {
+      color: #9ca3af;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: #111827; }
+
+    @media (max-width: 768px) {
+      .video-box { border-radius: 12px; }
+      .header-title { font-size: 22px; }
+      .header-upload { padding: 8px 16px; font-size: 13px; }
+    }
+  </style>
 </head>
 <body>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '97769e31ab76979e0ee340bc5c857351',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/97769e31ab76979e0ee340bc5c857351/invoke.js"></script>    
-    <div class="separator" style="clear: both; text-align: center;"><iframe width="100%" height="100%"
-    src="https://cdn.videy.co/7v8DDSj01.mp4"
-    frameborder="0" style="position:absolute; top:5; left: 0">
-  </iframe></object></div>
+
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#" class="header-title">videy</a>
+      <a href="#" class="header-upload">Upload Video</a>
+    </div>
+  </header>
+  
+<script async="async" data-cfasync="false" src="https://hypothesisgarden.com/a227b60d1b3b2189655acfefd864f0ab/invoke.js"></script>
+<div id="container-a227b60d1b3b2189655acfefd864f0ab"></div>
+  
+  <main class="page-content">
+    <div class="video-player-wrap">
+      <div class="video-box" id="videoContainer">
+        <video
+          id="video"
+          controls
+          playsinline
+          webkit-playsinline
+          controlsList="nodownload"
+        ></video>
+      </div>
+    </div>   
     
-<!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
-<!-- Histats.com  START  (aync)-->
+    <div class="video-actions">
+      <button class="btn share-btn" id="shareBtn">🔗 Bagikan Tautan</button>
+      <a href="#" class="btn download-btn" id="downloadBtn" target="_blank" download>📥 Unduh Video</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#" class="footer-link">Terms of Service</a>
+      <a href="#" class="footer-link">Privacy Policy</a>
+      <a href="#" class="footer-link">Report Abuse</a>
+    </div>
+    <div>© 2026 Videy – Simple & Free Video Hosting</div>
+  </footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const VIDEO_ID = params.get("id") || "";
+
+const video = document.getElementById("video");
+const videoContainer = document.getElementById("videoContainer");
+const shareBtn = document.getElementById("shareBtn");
+const downloadBtn = document.getElementById("downloadBtn");
+const baseUrl = "https://cdn2.videy.co/";
+
+function showError(message) {
+  video.style.display = "none";
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "video-error-msg";
+  errorDiv.innerText = message;
+  videoContainer.appendChild(errorDiv);
+}
+
+function loadVideo(extension = ".mp4") {
+  if (!VIDEO_ID) {
+    showError("ID video tidak ditemukan. Gunakan format URL: ?id=KODE_VIDEO");
+    return;
+  }
+  const source = baseUrl + VIDEO_ID + extension;
+  video.src = source;
+  video.load();
+}
+
+// Inisialisasi video jika ID tersedia
+if (VIDEO_ID) {
+  loadVideo(".mp4");
+
+  // Ketika video berhasil dimuat dan siap diputar
+  video.onloadedmetadata = () => {
+    downloadBtn.href = video.src;
+    downloadBtn.style.display = "inline-flex";
+  };
+
+  // Mekanisme fallback jika .mp4 gagal, pindah ke .mov
+  video.onerror = () => {
+    if (!video.dataset.triedFallback) {
+      video.dataset.triedFallback = "true";
+      loadVideo(".mov");
+    } else {
+      showError("Video tidak ditemukan atau format tidak didukung.");
+      downloadBtn.style.display = "none";
+    }
+  };
+} else {
+  showError("Silakan masukkan ID Video pada parameter URL.");
+}
+
+// Logika Tombol Salin/Bagikan Tautan
+shareBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(window.location.href)
+    .then(() => {
+      shareBtn.innerText = "✅ Tautan Disalin!";
+      setTimeout(() => { shareBtn.innerText = "🔗 Bagikan Tautan"; }, 2000);
+    })
+    .catch(() => {
+      alert("Gagal menyalin tautan otomatis.");
+    });
+});
+</script>
+     
+   <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4573229,4,0,0,0,00010000']);
+_Hasync.push(['Histats.start', '1,5009868,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
-_Hasync.push(['Histats.framed_page', '']);
 (function() {
 var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
 hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4573229&101" alt="" border="0"></a></noscript>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5009868&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
+
+</body>
+</html>
