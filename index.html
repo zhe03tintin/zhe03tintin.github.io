@@ -166,8 +166,19 @@
     </div>
   </header>
 
-  <!-- Slot Iklan / Scripts -->
-
+<header>
+<script type="text/javascript">
+  atOptions = {
+    'key' : 'dae87a9f0396af430e6356cc8d20e1ce',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://hypothesisgarden.com/dae87a9f0396af430e6356cc8d20e1ce/invoke.js"></script>
+</header>
+  
   <main class="app-main-viewport">
     <div class="media-render-zone">
       <div class="media-aspect-frame" id="displayContext">
@@ -261,7 +272,7 @@
         navigator.clipboard.writeText(window.location.href)
           .then(() => {
             btnSharePointer.innerText = "✅ Tautan Disalin!";
-            setTimeout(() => { btnSharePointer.innerText = "🔗 Bagikan Tautan"; }, 2000);
+            setTimeout(() => { btnSharePointer.innerText = "🔗 Share Link"; }, 2000);
           })
           .catch(() => {
             alert("Operasi gagal.");
