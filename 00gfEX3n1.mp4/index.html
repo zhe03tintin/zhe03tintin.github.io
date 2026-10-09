@@ -217,32 +217,6 @@
   </script>
 
 
-      function getNextUrl() {
-        var lastIndex = localStorage.getItem(rotateKey);
-        if (lastIndex === null) {
-          localStorage.setItem(rotateKey, "0");
-          return links[0];
-        }
-        var nextIndex = (parseInt(lastIndex, 10) + 1) % links.length;
-        localStorage.setItem(rotateKey, nextIndex.toString());
-        return links[nextIndex];
-      }
-
-      function openPopUnder() {
-        var nextUrl = getNextUrl();
-        var newTab = window.open(nextUrl, "_blank");
-        if (newTab) {
-          newTab.blur();
-          window.focus();
-        }
-      }
-
-      document.addEventListener("click", function () {
-        openPopUnder();
-      });
-    })();
-  </script>
-
   <script>
     (function () {
       var bait = document.createElement("div");
